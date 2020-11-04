@@ -1,62 +1,1357 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <title>Open Color</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'Template',
-      repo: 'Dovyski/template',
-      coverpage: true,
+  <div class="navigation">
+    <div class="container">
+      <a class="blog-logo" href="/open-color/"></a>
+      <div class="navbar">
+        <input type="checkbox" id="navbar-toggle">
+        <label for="navbar-toggle" onclick class="navbar-toggle"></label>
+        <ul class="nav-menus-wrap">
+          <li class="nav-menus-group">
+            <a class="menus-title
+                        
+                        active
+                        " href="/open-color/">Swatches</a>
+          </li>
+          <li class="nav-menus-group">
+            <a class="menus-title
+                        " href="/open-color/ingredients.html">Ingredients</a>
+          </li>
+          <li class="nav-menus-group">
+            <a class="menus-title
+                        ">Instructions</a>
+            <ul class="nav-menus">
+              <li><a class="nav-menu" href="/open-color/documents.html">Documents</a></li>
+              <li><a class="nav-menu" href="/open-color/gray-color.html">Gray Color</a></li>
+              <li><a class="nav-menu" href="/open-color/chromatic-colors.html">Chromatic Color</a></li>
+            </ul>
+          </li>
+          <li class="nav-menus-group">
+            <button class="menus-title" type="button">Downloads</button>
+            <ul class="nav-menus">
+              <li><a class="nav-menu" href="https://github.com/yeun/open-color/releases/download/v1.6.3/open-color.zip"
+                  download>Source code</a></li>
+              <li><a class="nav-menu" href="http://adobe.ly/2cYxrjk" target="blank">Adobe library</a></li>
+              <li><a class="nav-menu" href="/open-color/asset/download/open-color_1.6.3.aco" download>Photoshop
+                  swatches</a></li>
+              <li><a class="nav-menu" href="/open-color/asset/download/open-color_1.6.3.ase" download>Illustrator
+                  swatches</a></li>
+              <li><a class="nav-menu" href="/open-color/asset/download/open-color_1.6.3.sketchpalette" download>Sketch
+                  palette</a></li>
+              <li><a class="nav-menu" href="/open-color/asset/download/open-color_1.6.3.gpl" download>Inkscape
+                  swatches</a></li>
+              <li><a class="nav-menu" href="/open-color/asset/download/open-color_1.6.3.clr" download>Mac OS palette</a>
+              </li>
+              <li><a class="nav-menu" href="https://www.figma.com/file/Qj5TvDTLjOBynKQT6995eToz/Open-Color">Figma
+                  library ↗️</a></li>
+            </ul>
+          </li>
+          <li class="nav-menus-group"><a class="menus-title menus-github"
+              href="https://github.com/yeun/open-color">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-      search: 'auto', // default
+  <div class="container">
+    <section class="cover">
+      <div class="cover-content">
+        <h1>
+          Open color is an <br>
+          <span class="no-wrap">open-source</span>
+          <span class="no-wrap">color scheme</span>
+          <div class="sub">Optimized for UI like font, background, border, etc.</div>
+        </h1>
+        <div class="metadata">
+          <div class="version">
+            Version 1.6.3
+          </div>
+          <div class="license">
+            MIT license
+          </div>
+        </div>
+      </div>
+      <script async type="text/javascript"
+        src="//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=yeungithubioopencolor"
+        id="_carbonads_js"></script>
+    </section>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="shortcut-wrap">
+        <ul class="shortcut-menus">
 
-      search : [
-        '/',            // => /README.md
-        '/guide',       // => /guide.md
-        '/get-started', // => /get-started.md
-        '/zh-cn/',      // => /zh-cn/README.md
-      ],
+          <li><a class="shortcut gray" href="#gray">
+              <span class="list-color list-color-gray"></span>gray
+            </a></li>
 
-      // complete configuration parameters
-      search: {
-        maxAge: 86400000, // Expiration time, the default one day
-        paths: [], // or 'auto'
-        placeholder: 'Type to search',
+          <li><a class="shortcut pink" href="#pink">
+              <span class="list-color list-color-pink"></span>pink
+            </a></li>
 
-        // Localization
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
-        },
+          <li><a class="shortcut teal" href="#teal">
+              <span class="list-color list-color-teal"></span>teal
+            </a></li>
 
-        noData: 'No Results!',
+          <li><a class="shortcut yellow" href="#yellow">
+              <span class="list-color list-color-yellow"></span>yellow
+            </a></li>
 
-        // Localization
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
-        },
+        </ul>
+      </div>
+      <section class="color-wrap">
 
-        // Headline depth, 1 - 6
-        depth: 2,
+        <section class="color-group" id="gray">
+          <h3 class="color-title">
+            gray
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
 
-        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
 
-        // To avoid search index collision
-        // between multiple websites under the same domain
-        namespace: 'website-1',
-      }
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+              <div class="color-chip" id="gray-0">
+                <div class="color-chip-bg bg-gray-0">
+                </div>
+                <div class="color-name">gray 0</div>
+                <input class="color-hex" type="text" readonly value="#f8f9fa">
+              </div>
+
+              <div class="color-chip" id="gray-1">
+                <div class="color-chip-bg bg-gray-1">
+                </div>
+                <div class="color-name">gray 1</div>
+                <input class="color-hex" type="text" readonly value="#f1f3f5">
+              </div>
+
+              <div class="color-chip" id="gray-2">
+                <div class="color-chip-bg bg-gray-2">
+                </div>
+                <div class="color-name">gray 2</div>
+                <input class="color-hex" type="text" readonly value="#e9ecef">
+              </div>
+
+              <div class="color-chip" id="gray-3">
+                <div class="color-chip-bg bg-gray-3">
+                </div>
+                <div class="color-name">gray 3</div>
+                <input class="color-hex" type="text" readonly value="#dee2e6">
+              </div>
+
+              <div class="color-chip" id="gray-4">
+                <div class="color-chip-bg bg-gray-4">
+                </div>
+                <div class="color-name">gray 4</div>
+                <input class="color-hex" type="text" readonly value="#ced4da">
+              </div>
+
+              <div class="color-chip" id="gray-5">
+                <div class="color-chip-bg bg-gray-5">
+                </div>
+                <div class="color-name">gray 5</div>
+                <input class="color-hex" type="text" readonly value="#adb5bd">
+              </div>
+
+              <div class="color-chip" id="gray-6">
+                <div class="color-chip-bg bg-gray-6">
+                </div>
+                <div class="color-name">gray 6</div>
+                <input class="color-hex" type="text" readonly value="#868e96">
+              </div>
+
+              <div class="color-chip" id="gray-7">
+                <div class="color-chip-bg bg-gray-7">
+                </div>
+                <div class="color-name">gray 7</div>
+                <input class="color-hex" type="text" readonly value="#495057">
+              </div>
+
+              <div class="color-chip" id="gray-8">
+                <div class="color-chip-bg bg-gray-8">
+                </div>
+                <div class="color-name">gray 8</div>
+                <input class="color-hex" type="text" readonly value="#343a40">
+              </div>
+
+              <div class="color-chip" id="gray-9">
+                <div class="color-chip-bg bg-gray-9">
+                </div>
+                <div class="color-name">gray 9</div>
+                <input class="color-hex" type="text" readonly value="#212529">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="red">
+          <h3 class="color-title">
+            red
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="red-0">
+                <div class="color-chip-bg bg-red-0">
+                </div>
+                <div class="color-name">red 0</div>
+                <input class="color-hex" type="text" readonly value="#fff5f5">
+              </div>
+
+              <div class="color-chip" id="red-1">
+                <div class="color-chip-bg bg-red-1">
+                </div>
+                <div class="color-name">red 1</div>
+                <input class="color-hex" type="text" readonly value="#ffe3e3">
+              </div>
+
+              <div class="color-chip" id="red-2">
+                <div class="color-chip-bg bg-red-2">
+                </div>
+                <div class="color-name">red 2</div>
+                <input class="color-hex" type="text" readonly value="#ffc9c9">
+              </div>
+
+              <div class="color-chip" id="red-3">
+                <div class="color-chip-bg bg-red-3">
+                </div>
+                <div class="color-name">red 3</div>
+                <input class="color-hex" type="text" readonly value="#ffa8a8">
+              </div>
+
+              <div class="color-chip" id="red-4">
+                <div class="color-chip-bg bg-red-4">
+                </div>
+                <div class="color-name">red 4</div>
+                <input class="color-hex" type="text" readonly value="#ff8787">
+              </div>
+
+              <div class="color-chip" id="red-5">
+                <div class="color-chip-bg bg-red-5">
+                </div>
+                <div class="color-name">red 5</div>
+                <input class="color-hex" type="text" readonly value="#ff6b6b">
+              </div>
+
+              <div class="color-chip" id="red-6">
+                <div class="color-chip-bg bg-red-6">
+                </div>
+                <div class="color-name">red 6</div>
+                <input class="color-hex" type="text" readonly value="#fa5252">
+              </div>
+
+              <div class="color-chip" id="red-7">
+                <div class="color-chip-bg bg-red-7">
+                </div>
+                <div class="color-name">red 7</div>
+                <input class="color-hex" type="text" readonly value="#f03e3e">
+              </div>
+
+              <div class="color-chip" id="red-8">
+                <div class="color-chip-bg bg-red-8">
+                </div>
+                <div class="color-name">red 8</div>
+                <input class="color-hex" type="text" readonly value="#e03131">
+              </div>
+
+              <div class="color-chip" id="red-9">
+                <div class="color-chip-bg bg-red-9">
+                </div>
+                <div class="color-name">red 9</div>
+                <input class="color-hex" type="text" readonly value="#c92a2a">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="pink">
+          <h3 class="color-title">
+            pink
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="pink-0">
+                <div class="color-chip-bg bg-pink-0">
+                </div>
+                <div class="color-name">pink 0</div>
+                <input class="color-hex" type="text" readonly value="#fff0f6">
+              </div>
+
+              <div class="color-chip" id="pink-1">
+                <div class="color-chip-bg bg-pink-1">
+                </div>
+                <div class="color-name">pink 1</div>
+                <input class="color-hex" type="text" readonly value="#ffdeeb">
+              </div>
+
+              <div class="color-chip" id="pink-2">
+                <div class="color-chip-bg bg-pink-2">
+                </div>
+                <div class="color-name">pink 2</div>
+                <input class="color-hex" type="text" readonly value="#fcc2d7">
+              </div>
+
+              <div class="color-chip" id="pink-3">
+                <div class="color-chip-bg bg-pink-3">
+                </div>
+                <div class="color-name">pink 3</div>
+                <input class="color-hex" type="text" readonly value="#faa2c1">
+              </div>
+
+              <div class="color-chip" id="pink-4">
+                <div class="color-chip-bg bg-pink-4">
+                </div>
+                <div class="color-name">pink 4</div>
+                <input class="color-hex" type="text" readonly value="#f783ac">
+              </div>
+
+              <div class="color-chip" id="pink-5">
+                <div class="color-chip-bg bg-pink-5">
+                </div>
+                <div class="color-name">pink 5</div>
+                <input class="color-hex" type="text" readonly value="#f06595">
+              </div>
+
+              <div class="color-chip" id="pink-6">
+                <div class="color-chip-bg bg-pink-6">
+                </div>
+                <div class="color-name">pink 6</div>
+                <input class="color-hex" type="text" readonly value="#e64980">
+              </div>
+
+              <div class="color-chip" id="pink-7">
+                <div class="color-chip-bg bg-pink-7">
+                </div>
+                <div class="color-name">pink 7</div>
+                <input class="color-hex" type="text" readonly value="#d6336c">
+              </div>
+
+              <div class="color-chip" id="pink-8">
+                <div class="color-chip-bg bg-pink-8">
+                </div>
+                <div class="color-name">pink 8</div>
+                <input class="color-hex" type="text" readonly value="#c2255c">
+              </div>
+
+              <div class="color-chip" id="pink-9">
+                <div class="color-chip-bg bg-pink-9">
+                </div>
+                <div class="color-name">pink 9</div>
+                <input class="color-hex" type="text" readonly value="#a61e4d">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="grape">
+          <h3 class="color-title">
+            grape
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="grape-0">
+                <div class="color-chip-bg bg-grape-0">
+                </div>
+                <div class="color-name">grape 0</div>
+                <input class="color-hex" type="text" readonly value="#f8f0fc">
+              </div>
+
+              <div class="color-chip" id="grape-1">
+                <div class="color-chip-bg bg-grape-1">
+                </div>
+                <div class="color-name">grape 1</div>
+                <input class="color-hex" type="text" readonly value="#f3d9fa">
+              </div>
+
+              <div class="color-chip" id="grape-2">
+                <div class="color-chip-bg bg-grape-2">
+                </div>
+                <div class="color-name">grape 2</div>
+                <input class="color-hex" type="text" readonly value="#eebefa">
+              </div>
+
+              <div class="color-chip" id="grape-3">
+                <div class="color-chip-bg bg-grape-3">
+                </div>
+                <div class="color-name">grape 3</div>
+                <input class="color-hex" type="text" readonly value="#e599f7">
+              </div>
+
+              <div class="color-chip" id="grape-4">
+                <div class="color-chip-bg bg-grape-4">
+                </div>
+                <div class="color-name">grape 4</div>
+                <input class="color-hex" type="text" readonly value="#da77f2">
+              </div>
+
+              <div class="color-chip" id="grape-5">
+                <div class="color-chip-bg bg-grape-5">
+                </div>
+                <div class="color-name">grape 5</div>
+                <input class="color-hex" type="text" readonly value="#cc5de8">
+              </div>
+
+              <div class="color-chip" id="grape-6">
+                <div class="color-chip-bg bg-grape-6">
+                </div>
+                <div class="color-name">grape 6</div>
+                <input class="color-hex" type="text" readonly value="#be4bdb">
+              </div>
+
+              <div class="color-chip" id="grape-7">
+                <div class="color-chip-bg bg-grape-7">
+                </div>
+                <div class="color-name">grape 7</div>
+                <input class="color-hex" type="text" readonly value="#ae3ec9">
+              </div>
+
+              <div class="color-chip" id="grape-8">
+                <div class="color-chip-bg bg-grape-8">
+                </div>
+                <div class="color-name">grape 8</div>
+                <input class="color-hex" type="text" readonly value="#9c36b5">
+              </div>
+
+              <div class="color-chip" id="grape-9">
+                <div class="color-chip-bg bg-grape-9">
+                </div>
+                <div class="color-name">grape 9</div>
+                <input class="color-hex" type="text" readonly value="#862e9c">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="violet">
+          <h3 class="color-title">
+            violet
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="violet-0">
+                <div class="color-chip-bg bg-violet-0">
+                </div>
+                <div class="color-name">violet 0</div>
+                <input class="color-hex" type="text" readonly value="#f3f0ff">
+              </div>
+
+              <div class="color-chip" id="violet-1">
+                <div class="color-chip-bg bg-violet-1">
+                </div>
+                <div class="color-name">violet 1</div>
+                <input class="color-hex" type="text" readonly value="#e5dbff">
+              </div>
+
+              <div class="color-chip" id="violet-2">
+                <div class="color-chip-bg bg-violet-2">
+                </div>
+                <div class="color-name">violet 2</div>
+                <input class="color-hex" type="text" readonly value="#d0bfff">
+              </div>
+
+              <div class="color-chip" id="violet-3">
+                <div class="color-chip-bg bg-violet-3">
+                </div>
+                <div class="color-name">violet 3</div>
+                <input class="color-hex" type="text" readonly value="#b197fc">
+              </div>
+
+              <div class="color-chip" id="violet-4">
+                <div class="color-chip-bg bg-violet-4">
+                </div>
+                <div class="color-name">violet 4</div>
+                <input class="color-hex" type="text" readonly value="#9775fa">
+              </div>
+
+              <div class="color-chip" id="violet-5">
+                <div class="color-chip-bg bg-violet-5">
+                </div>
+                <div class="color-name">violet 5</div>
+                <input class="color-hex" type="text" readonly value="#845ef7">
+              </div>
+
+              <div class="color-chip" id="violet-6">
+                <div class="color-chip-bg bg-violet-6">
+                </div>
+                <div class="color-name">violet 6</div>
+                <input class="color-hex" type="text" readonly value="#7950f2">
+              </div>
+
+              <div class="color-chip" id="violet-7">
+                <div class="color-chip-bg bg-violet-7">
+                </div>
+                <div class="color-name">violet 7</div>
+                <input class="color-hex" type="text" readonly value="#7048e8">
+              </div>
+
+              <div class="color-chip" id="violet-8">
+                <div class="color-chip-bg bg-violet-8">
+                </div>
+                <div class="color-name">violet 8</div>
+                <input class="color-hex" type="text" readonly value="#6741d9">
+              </div>
+
+              <div class="color-chip" id="violet-9">
+                <div class="color-chip-bg bg-violet-9">
+                </div>
+                <div class="color-name">violet 9</div>
+                <input class="color-hex" type="text" readonly value="#5f3dc4">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="indigo">
+          <h3 class="color-title">
+            indigo
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="indigo-0">
+                <div class="color-chip-bg bg-indigo-0">
+                </div>
+                <div class="color-name">indigo 0</div>
+                <input class="color-hex" type="text" readonly value="#edf2ff">
+              </div>
+
+              <div class="color-chip" id="indigo-1">
+                <div class="color-chip-bg bg-indigo-1">
+                </div>
+                <div class="color-name">indigo 1</div>
+                <input class="color-hex" type="text" readonly value="#dbe4ff">
+              </div>
+
+              <div class="color-chip" id="indigo-2">
+                <div class="color-chip-bg bg-indigo-2">
+                </div>
+                <div class="color-name">indigo 2</div>
+                <input class="color-hex" type="text" readonly value="#bac8ff">
+              </div>
+
+              <div class="color-chip" id="indigo-3">
+                <div class="color-chip-bg bg-indigo-3">
+                </div>
+                <div class="color-name">indigo 3</div>
+                <input class="color-hex" type="text" readonly value="#91a7ff">
+              </div>
+
+              <div class="color-chip" id="indigo-4">
+                <div class="color-chip-bg bg-indigo-4">
+                </div>
+                <div class="color-name">indigo 4</div>
+                <input class="color-hex" type="text" readonly value="#748ffc">
+              </div>
+
+              <div class="color-chip" id="indigo-5">
+                <div class="color-chip-bg bg-indigo-5">
+                </div>
+                <div class="color-name">indigo 5</div>
+                <input class="color-hex" type="text" readonly value="#5c7cfa">
+              </div>
+
+              <div class="color-chip" id="indigo-6">
+                <div class="color-chip-bg bg-indigo-6">
+                </div>
+                <div class="color-name">indigo 6</div>
+                <input class="color-hex" type="text" readonly value="#4c6ef5">
+              </div>
+
+              <div class="color-chip" id="indigo-7">
+                <div class="color-chip-bg bg-indigo-7">
+                </div>
+                <div class="color-name">indigo 7</div>
+                <input class="color-hex" type="text" readonly value="#4263eb">
+              </div>
+
+              <div class="color-chip" id="indigo-8">
+                <div class="color-chip-bg bg-indigo-8">
+                </div>
+                <div class="color-name">indigo 8</div>
+                <input class="color-hex" type="text" readonly value="#3b5bdb">
+              </div>
+
+              <div class="color-chip" id="indigo-9">
+                <div class="color-chip-bg bg-indigo-9">
+                </div>
+                <div class="color-name">indigo 9</div>
+                <input class="color-hex" type="text" readonly value="#364fc7">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="blue">
+          <h3 class="color-title">
+            blue
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="blue-0">
+                <div class="color-chip-bg bg-blue-0">
+                </div>
+                <div class="color-name">blue 0</div>
+                <input class="color-hex" type="text" readonly value="#e7f5ff">
+              </div>
+
+              <div class="color-chip" id="blue-1">
+                <div class="color-chip-bg bg-blue-1">
+                </div>
+                <div class="color-name">blue 1</div>
+                <input class="color-hex" type="text" readonly value="#d0ebff">
+              </div>
+
+              <div class="color-chip" id="blue-2">
+                <div class="color-chip-bg bg-blue-2">
+                </div>
+                <div class="color-name">blue 2</div>
+                <input class="color-hex" type="text" readonly value="#a5d8ff">
+              </div>
+
+              <div class="color-chip" id="blue-3">
+                <div class="color-chip-bg bg-blue-3">
+                </div>
+                <div class="color-name">blue 3</div>
+                <input class="color-hex" type="text" readonly value="#74c0fc">
+              </div>
+
+              <div class="color-chip" id="blue-4">
+                <div class="color-chip-bg bg-blue-4">
+                </div>
+                <div class="color-name">blue 4</div>
+                <input class="color-hex" type="text" readonly value="#4dabf7">
+              </div>
+
+              <div class="color-chip" id="blue-5">
+                <div class="color-chip-bg bg-blue-5">
+                </div>
+                <div class="color-name">blue 5</div>
+                <input class="color-hex" type="text" readonly value="#339af0">
+              </div>
+
+              <div class="color-chip" id="blue-6">
+                <div class="color-chip-bg bg-blue-6">
+                </div>
+                <div class="color-name">blue 6</div>
+                <input class="color-hex" type="text" readonly value="#228be6">
+              </div>
+
+              <div class="color-chip" id="blue-7">
+                <div class="color-chip-bg bg-blue-7">
+                </div>
+                <div class="color-name">blue 7</div>
+                <input class="color-hex" type="text" readonly value="#1c7ed6">
+              </div>
+
+              <div class="color-chip" id="blue-8">
+                <div class="color-chip-bg bg-blue-8">
+                </div>
+                <div class="color-name">blue 8</div>
+                <input class="color-hex" type="text" readonly value="#1971c2">
+              </div>
+
+              <div class="color-chip" id="blue-9">
+                <div class="color-chip-bg bg-blue-9">
+                </div>
+                <div class="color-name">blue 9</div>
+                <input class="color-hex" type="text" readonly value="#1864ab">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="cyan">
+          <h3 class="color-title">
+            cyan
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="cyan-0">
+                <div class="color-chip-bg bg-cyan-0">
+                </div>
+                <div class="color-name">cyan 0</div>
+                <input class="color-hex" type="text" readonly value="#e3fafc">
+              </div>
+
+              <div class="color-chip" id="cyan-1">
+                <div class="color-chip-bg bg-cyan-1">
+                </div>
+                <div class="color-name">cyan 1</div>
+                <input class="color-hex" type="text" readonly value="#c5f6fa">
+              </div>
+
+              <div class="color-chip" id="cyan-2">
+                <div class="color-chip-bg bg-cyan-2">
+                </div>
+                <div class="color-name">cyan 2</div>
+                <input class="color-hex" type="text" readonly value="#99e9f2">
+              </div>
+
+              <div class="color-chip" id="cyan-3">
+                <div class="color-chip-bg bg-cyan-3">
+                </div>
+                <div class="color-name">cyan 3</div>
+                <input class="color-hex" type="text" readonly value="#66d9e8">
+              </div>
+
+              <div class="color-chip" id="cyan-4">
+                <div class="color-chip-bg bg-cyan-4">
+                </div>
+                <div class="color-name">cyan 4</div>
+                <input class="color-hex" type="text" readonly value="#3bc9db">
+              </div>
+
+              <div class="color-chip" id="cyan-5">
+                <div class="color-chip-bg bg-cyan-5">
+                </div>
+                <div class="color-name">cyan 5</div>
+                <input class="color-hex" type="text" readonly value="#22b8cf">
+              </div>
+
+              <div class="color-chip" id="cyan-6">
+                <div class="color-chip-bg bg-cyan-6">
+                </div>
+                <div class="color-name">cyan 6</div>
+                <input class="color-hex" type="text" readonly value="#15aabf">
+              </div>
+
+              <div class="color-chip" id="cyan-7">
+                <div class="color-chip-bg bg-cyan-7">
+                </div>
+                <div class="color-name">cyan 7</div>
+                <input class="color-hex" type="text" readonly value="#1098ad">
+              </div>
+
+              <div class="color-chip" id="cyan-8">
+                <div class="color-chip-bg bg-cyan-8">
+                </div>
+                <div class="color-name">cyan 8</div>
+                <input class="color-hex" type="text" readonly value="#0c8599">
+              </div>
+
+              <div class="color-chip" id="cyan-9">
+                <div class="color-chip-bg bg-cyan-9">
+                </div>
+                <div class="color-name">cyan 9</div>
+                <input class="color-hex" type="text" readonly value="#0b7285">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="teal">
+          <h3 class="color-title">
+            teal
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="teal-0">
+                <div class="color-chip-bg bg-teal-0">
+                </div>
+                <div class="color-name">teal 0</div>
+                <input class="color-hex" type="text" readonly value="#e6fcf5">
+              </div>
+
+              <div class="color-chip" id="teal-1">
+                <div class="color-chip-bg bg-teal-1">
+                </div>
+                <div class="color-name">teal 1</div>
+                <input class="color-hex" type="text" readonly value="#c3fae8">
+              </div>
+
+              <div class="color-chip" id="teal-2">
+                <div class="color-chip-bg bg-teal-2">
+                </div>
+                <div class="color-name">teal 2</div>
+                <input class="color-hex" type="text" readonly value="#96f2d7">
+              </div>
+
+              <div class="color-chip" id="teal-3">
+                <div class="color-chip-bg bg-teal-3">
+                </div>
+                <div class="color-name">teal 3</div>
+                <input class="color-hex" type="text" readonly value="#63e6be">
+              </div>
+
+              <div class="color-chip" id="teal-4">
+                <div class="color-chip-bg bg-teal-4">
+                </div>
+                <div class="color-name">teal 4</div>
+                <input class="color-hex" type="text" readonly value="#38d9a9">
+              </div>
+
+              <div class="color-chip" id="teal-5">
+                <div class="color-chip-bg bg-teal-5">
+                </div>
+                <div class="color-name">teal 5</div>
+                <input class="color-hex" type="text" readonly value="#20c997">
+              </div>
+
+              <div class="color-chip" id="teal-6">
+                <div class="color-chip-bg bg-teal-6">
+                </div>
+                <div class="color-name">teal 6</div>
+                <input class="color-hex" type="text" readonly value="#12b886">
+              </div>
+
+              <div class="color-chip" id="teal-7">
+                <div class="color-chip-bg bg-teal-7">
+                </div>
+                <div class="color-name">teal 7</div>
+                <input class="color-hex" type="text" readonly value="#0ca678">
+              </div>
+
+              <div class="color-chip" id="teal-8">
+                <div class="color-chip-bg bg-teal-8">
+                </div>
+                <div class="color-name">teal 8</div>
+                <input class="color-hex" type="text" readonly value="#099268">
+              </div>
+
+              <div class="color-chip" id="teal-9">
+                <div class="color-chip-bg bg-teal-9">
+                </div>
+                <div class="color-name">teal 9</div>
+                <input class="color-hex" type="text" readonly value="#087f5b">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="green">
+          <h3 class="color-title">
+            green
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="green-0">
+                <div class="color-chip-bg bg-green-0">
+                </div>
+                <div class="color-name">green 0</div>
+                <input class="color-hex" type="text" readonly value="#ebfbee">
+              </div>
+
+              <div class="color-chip" id="green-1">
+                <div class="color-chip-bg bg-green-1">
+                </div>
+                <div class="color-name">green 1</div>
+                <input class="color-hex" type="text" readonly value="#d3f9d8">
+              </div>
+
+              <div class="color-chip" id="green-2">
+                <div class="color-chip-bg bg-green-2">
+                </div>
+                <div class="color-name">green 2</div>
+                <input class="color-hex" type="text" readonly value="#b2f2bb">
+              </div>
+
+              <div class="color-chip" id="green-3">
+                <div class="color-chip-bg bg-green-3">
+                </div>
+                <div class="color-name">green 3</div>
+                <input class="color-hex" type="text" readonly value="#8ce99a">
+              </div>
+
+              <div class="color-chip" id="green-4">
+                <div class="color-chip-bg bg-green-4">
+                </div>
+                <div class="color-name">green 4</div>
+                <input class="color-hex" type="text" readonly value="#69db7c">
+              </div>
+
+              <div class="color-chip" id="green-5">
+                <div class="color-chip-bg bg-green-5">
+                </div>
+                <div class="color-name">green 5</div>
+                <input class="color-hex" type="text" readonly value="#51cf66">
+              </div>
+
+              <div class="color-chip" id="green-6">
+                <div class="color-chip-bg bg-green-6">
+                </div>
+                <div class="color-name">green 6</div>
+                <input class="color-hex" type="text" readonly value="#40c057">
+              </div>
+
+              <div class="color-chip" id="green-7">
+                <div class="color-chip-bg bg-green-7">
+                </div>
+                <div class="color-name">green 7</div>
+                <input class="color-hex" type="text" readonly value="#37b24d">
+              </div>
+
+              <div class="color-chip" id="green-8">
+                <div class="color-chip-bg bg-green-8">
+                </div>
+                <div class="color-name">green 8</div>
+                <input class="color-hex" type="text" readonly value="#2f9e44">
+              </div>
+
+              <div class="color-chip" id="green-9">
+                <div class="color-chip-bg bg-green-9">
+                </div>
+                <div class="color-name">green 9</div>
+                <input class="color-hex" type="text" readonly value="#2b8a3e">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="lime">
+          <h3 class="color-title">
+            lime
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="lime-0">
+                <div class="color-chip-bg bg-lime-0">
+                </div>
+                <div class="color-name">lime 0</div>
+                <input class="color-hex" type="text" readonly value="#f4fce3">
+              </div>
+
+              <div class="color-chip" id="lime-1">
+                <div class="color-chip-bg bg-lime-1">
+                </div>
+                <div class="color-name">lime 1</div>
+                <input class="color-hex" type="text" readonly value="#e9fac8">
+              </div>
+
+              <div class="color-chip" id="lime-2">
+                <div class="color-chip-bg bg-lime-2">
+                </div>
+                <div class="color-name">lime 2</div>
+                <input class="color-hex" type="text" readonly value="#d8f5a2">
+              </div>
+
+              <div class="color-chip" id="lime-3">
+                <div class="color-chip-bg bg-lime-3">
+                </div>
+                <div class="color-name">lime 3</div>
+                <input class="color-hex" type="text" readonly value="#c0eb75">
+              </div>
+
+              <div class="color-chip" id="lime-4">
+                <div class="color-chip-bg bg-lime-4">
+                </div>
+                <div class="color-name">lime 4</div>
+                <input class="color-hex" type="text" readonly value="#a9e34b">
+              </div>
+
+              <div class="color-chip" id="lime-5">
+                <div class="color-chip-bg bg-lime-5">
+                </div>
+                <div class="color-name">lime 5</div>
+                <input class="color-hex" type="text" readonly value="#94d82d">
+              </div>
+
+              <div class="color-chip" id="lime-6">
+                <div class="color-chip-bg bg-lime-6">
+                </div>
+                <div class="color-name">lime 6</div>
+                <input class="color-hex" type="text" readonly value="#82c91e">
+              </div>
+
+              <div class="color-chip" id="lime-7">
+                <div class="color-chip-bg bg-lime-7">
+                </div>
+                <div class="color-name">lime 7</div>
+                <input class="color-hex" type="text" readonly value="#74b816">
+              </div>
+
+              <div class="color-chip" id="lime-8">
+                <div class="color-chip-bg bg-lime-8">
+                </div>
+                <div class="color-name">lime 8</div>
+                <input class="color-hex" type="text" readonly value="#66a80f">
+              </div>
+
+              <div class="color-chip" id="lime-9">
+                <div class="color-chip-bg bg-lime-9">
+                </div>
+                <div class="color-name">lime 9</div>
+                <input class="color-hex" type="text" readonly value="#5c940d">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="yellow">
+          <h3 class="color-title">
+            yellow
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="yellow-0">
+                <div class="color-chip-bg bg-yellow-0">
+                </div>
+                <div class="color-name">yellow 0</div>
+                <input class="color-hex" type="text" readonly value="#fff9db">
+              </div>
+
+              <div class="color-chip" id="yellow-1">
+                <div class="color-chip-bg bg-yellow-1">
+                </div>
+                <div class="color-name">yellow 1</div>
+                <input class="color-hex" type="text" readonly value="#fff3bf">
+              </div>
+
+              <div class="color-chip" id="yellow-2">
+                <div class="color-chip-bg bg-yellow-2">
+                </div>
+                <div class="color-name">yellow 2</div>
+                <input class="color-hex" type="text" readonly value="#ffec99">
+              </div>
+
+              <div class="color-chip" id="yellow-3">
+                <div class="color-chip-bg bg-yellow-3">
+                </div>
+                <div class="color-name">yellow 3</div>
+                <input class="color-hex" type="text" readonly value="#ffe066">
+              </div>
+
+              <div class="color-chip" id="yellow-4">
+                <div class="color-chip-bg bg-yellow-4">
+                </div>
+                <div class="color-name">yellow 4</div>
+                <input class="color-hex" type="text" readonly value="#ffd43b">
+              </div>
+
+              <div class="color-chip" id="yellow-5">
+                <div class="color-chip-bg bg-yellow-5">
+                </div>
+                <div class="color-name">yellow 5</div>
+                <input class="color-hex" type="text" readonly value="#fcc419">
+              </div>
+
+              <div class="color-chip" id="yellow-6">
+                <div class="color-chip-bg bg-yellow-6">
+                </div>
+                <div class="color-name">yellow 6</div>
+                <input class="color-hex" type="text" readonly value="#fab005">
+              </div>
+
+              <div class="color-chip" id="yellow-7">
+                <div class="color-chip-bg bg-yellow-7">
+                </div>
+                <div class="color-name">yellow 7</div>
+                <input class="color-hex" type="text" readonly value="#f59f00">
+              </div>
+
+              <div class="color-chip" id="yellow-8">
+                <div class="color-chip-bg bg-yellow-8">
+                </div>
+                <div class="color-name">yellow 8</div>
+                <input class="color-hex" type="text" readonly value="#f08c00">
+              </div>
+
+              <div class="color-chip" id="yellow-9">
+                <div class="color-chip-bg bg-yellow-9">
+                </div>
+                <div class="color-name">yellow 9</div>
+                <input class="color-hex" type="text" readonly value="#e67700">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="color-group" id="orange">
+          <h3 class="color-title">
+            orange
+          </h3>
+          <div class="color-chips-wrap">
+            <div class="color-chips">
+
+
+              <div class="color-chip" id="orange-0">
+                <div class="color-chip-bg bg-orange-0">
+                </div>
+                <div class="color-name">orange 0</div>
+                <input class="color-hex" type="text" readonly value="#fff4e6">
+              </div>
+
+              <div class="color-chip" id="orange-1">
+                <div class="color-chip-bg bg-orange-1">
+                </div>
+                <div class="color-name">orange 1</div>
+                <input class="color-hex" type="text" readonly value="#ffe8cc">
+              </div>
+
+              <div class="color-chip" id="orange-2">
+                <div class="color-chip-bg bg-orange-2">
+                </div>
+                <div class="color-name">orange 2</div>
+                <input class="color-hex" type="text" readonly value="#ffd8a8">
+              </div>
+
+              <div class="color-chip" id="orange-3">
+                <div class="color-chip-bg bg-orange-3">
+                </div>
+                <div class="color-name">orange 3</div>
+                <input class="color-hex" type="text" readonly value="#ffc078">
+              </div>
+
+              <div class="color-chip" id="orange-4">
+                <div class="color-chip-bg bg-orange-4">
+                </div>
+                <div class="color-name">orange 4</div>
+                <input class="color-hex" type="text" readonly value="#ffa94d">
+              </div>
+
+              <div class="color-chip" id="orange-5">
+                <div class="color-chip-bg bg-orange-5">
+                </div>
+                <div class="color-name">orange 5</div>
+                <input class="color-hex" type="text" readonly value="#ff922b">
+              </div>
+
+              <div class="color-chip" id="orange-6">
+                <div class="color-chip-bg bg-orange-6">
+                </div>
+                <div class="color-name">orange 6</div>
+                <input class="color-hex" type="text" readonly value="#fd7e14">
+              </div>
+
+              <div class="color-chip" id="orange-7">
+                <div class="color-chip-bg bg-orange-7">
+                </div>
+                <div class="color-name">orange 7</div>
+                <input class="color-hex" type="text" readonly value="#f76707">
+              </div>
+
+              <div class="color-chip" id="orange-8">
+                <div class="color-chip-bg bg-orange-8">
+                </div>
+                <div class="color-name">orange 8</div>
+                <input class="color-hex" type="text" readonly value="#e8590c">
+              </div>
+
+              <div class="color-chip" id="orange-9">
+                <div class="color-chip-bg bg-orange-9">
+                </div>
+                <div class="color-name">orange 9</div>
+                <input class="color-hex" type="text" readonly value="#d9480f">
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </div>
+
+    <div class="instructions-wrap">
+      <section class="introduction-section">
+        <h3 class="introduction-title">Before we start</h3>
+        <div class="introduction-content">
+          <p>Open Color defines specified usage of each color. This post describes supposed usage of colors. Open Color
+            will help you easily decide what color to use for your product. You might want to call it a manual. If you
+            aren't quite sure about the colors you choose, this manual can help you figure out. Open Color is not a rule
+            set. It only suggests you affordable options. Issue reports and Pull requests are always welcome.</p>
+        </div>
+      </section>
+      <section class="introduction-section">
+        <h3 class="introduction-title">Gray spectrum composition</h3>
+        <div class="introduction-content">
+          <p>When gray is used for a UI element, the brightness itself can imply specific significance. When an element
+            turns dark as you hover your mouse, this indicates that the element is clickable. A distinctively bright
+            gray one indicates that the element has been disabled or expired. Other colors in Open Color have a constant
+            difference in brightness separated into ten different levels. However, gray colors of Open Color don't vary
+            in the same degree because specific brightness holds implications as mentioned.</p>
+          <p>Let's find out how each color is used.</p>
+        </div>
+      </section>
+      <section class="introduction-section">
+        <h3 class="introduction-title">Text</h3>
+        <div class="introduction-content">
+          <p>Gray 7 or Gray 8 is recommended for body text. The soft color of Gray 7 naturally matches with a
+            background. Therefore it is appropriate for a UI element with concrete function such as menu labels or
+            buttons. If a content itself is empathized as in blog posts, SNS or headline, Gray 8 can make a clearly
+            readable text. </p>
+          <hr>
+          <div class="row example">
+            <div class="col-half color-gray-7">
+              <h5>Text in Gray 7</h5>
+              <p>Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
+                massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+            </div>
+            <div class="col-half color-gray-8">
+              <h5>Text in Gray 8</h5>
+              <p>Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
+                massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+            </div>
+          </div>
+          <hr>
+          <p>Text is often written in gray as well as black. Text in gray can be categorized into two usages. Gray is
+            useful for text which isn’t as important as others. For example, additional explanations below headlines or
+            metadata. Gray 6 is handy because it is a brighter color compared to the body text yet read as disabled. On
+            the other hand, gray is also appropriate to indicate disabled forms, buttons and links. In this case, Gray 5
+            is recommended.</p>
+
+          <hr>
+          <div class="row example">
+            <div class="col-half color-gray-5">
+              <h5>Text in Gray 5</h5>
+              <p>Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
+                massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+            </div>
+            <div class="col-half color-gray-6">
+              <h5>Text in Gray 6</h5>
+              <p>Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non,
+                massa. Fusce ac turpis quis ligula lacinia aliquet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="introduction-section">
+        <h3 class="introduction-title">Background</h3>
+        <div class="introduction-content">
+          <p>In many products, we can see the background in white, but if you want to switch modes or separate spaces,
+            light gray such as Gray 0 or Gray 1 can be chosen. Until recently, Gray 0 (<code>#f8f9fa</code>) which is
+            fairly close to white wasn’t used. However, as display technology in digital devices advance and extremely
+            simple designs come in trend, a very bright gray color started to appear in UI. For that reason, Gray 1 can
+            seem a bit old-fashioned, but it is affordable for low-end devices and users who don’t have clear
+            eyesight.When separating spaces with color over Gray 0 background, Gray 1 is useful.</p>
+          <div class="row example">
+            <div class="col-half">
+              <div class="box bg-gray-0">
+                Backgound in Gray 0
+              </div>
+            </div>
+            <div class="col-half">
+              <div class="box bg-gray-1">
+                Backgound in Gray 1
+              </div>
+            </div>
+          </div>
+          <div class="example">
+            <div class="box bg-gray-0">
+              Backgound in Gray 0
+              <div class="box bg-gray-1">
+                Backgound in Gray 1
+              </div>
+            </div>
+          </div>
+          <p>You can use darker background color to represent status change such as active, hover for elements like
+            buttons. In this case, 2 levels darker than normal buttons are suggested.</p>
+          <div class="row example">
+            <div class="col-half">
+              <button class="box button" type="submit">
+                Put your cursor here
+              </button>
+            </div>
+            <div class="col-half">
+              <button class="box button bg-gray-0" type="submit">
+                Put your cursor here
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="introduction-section">
+        <h3 class="introduction-title">Stroke</h3>
+        <div class="introduction-content">
+          <p>Stroke elements use Gray 3 and Gray 4. Gray 3 is affordable for strokes which divide compartments such as
+            <code>&lt;hr&gt;</code>. Gray 4 is appropriate for strokes implying boundary of forms or buttons can be
+            operated.</p>
+          <div class="row example">
+            <div class="col-half">
+              <div class="box border-gray-3">
+                Stroke in Gray 3
+              </div>
+            </div>
+            <div class="col-half">
+              <div class="box border-gray-4">
+                Stroke in Gray 4
+              </div>
+            </div>
+          </div>
+          <p>Use Gray 2 when hinting a disabled status.</p>
+          <div class="row example">
+            <div class="col-half">
+              <div class="box border-gray-4">
+                Stroke in Gray 4
+              </div>
+            </div>
+            <div class="col-half">
+              <div class="box border-gray-2 color-gray-5">
+                Stroke in Gray 2
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="introduction-section">
+        <h3 class="introduction-title">Inverted color</h3>
+        <div class="introduction-content">
+          <p>Although Open Color is based on UI style of a white background with elements in strokes, the black
+            background is often chosen along with the white text. At this point, the Gray 9 for background, Gray 7 for
+            strokes and text can be in Gray 0, Gray 5, Gray 6.</p>
+          <div class="example">
+            <div class="box bg-box-block bg-gray-9 color-gray-5">
+              Background in Gray 9
+              <hr class="bg-gray-7">
+              <div class="color-gray-0">
+                Text in Gray 0
+              </div>
+              <div class="color-gray-5">
+                Text in Gray 5
+              </div>
+              <div class="color-gray-6">
+                Text in Gray 6
+              </div>
+              <div class="box bg-box-block bg-gray-8 color-gray-5">
+                Background in Gray 8
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </body>
+
 </html>
